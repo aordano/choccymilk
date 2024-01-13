@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
+        "dev": "concurrently \"zola serve\" \"vite\"",
         "build": "zola build && tsc && vite build",
         "preview": "vite preview"
     },
@@ -12,7 +12,10 @@
         "lit": "^3.1.0"
     },
     "devDependencies": {
+        "@types/node": "^20.11.0",
+        "concurrently": "^8.2.2",
         "typescript": "^5.2.2",
-        "vite": "^5.0.8"
+        "vite": "^5.0.8",
+        "vite-plugin-static-copy": "^1.0.0"
     }
 }
