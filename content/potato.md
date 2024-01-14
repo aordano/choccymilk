@@ -1,6 +1,6 @@
 +++
-title = "L'élevage de chèvres, la carrière alternative de tous dévelopeurs'"
-slug = "élevage-chèvre-carrière-alternative"
+title = "potatosio"
+slug = "potato rocks"
 date = "2024-01-13"
 +++
 

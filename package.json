@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "concurrently \"zola serve\" \"vite\"",
+        "dev": "zola build && concurrently \"chokidar 'content/*' 'static/*' 'templates/*' -c 'zola build'\" \"chokidar 'vite/*' -c 'vite build -m development'\" \"vite\"",
         "build": "zola build && tsc && vite build",
         "preview": "vite preview"
     },
@@ -13,9 +13,11 @@
     },
     "devDependencies": {
         "@types/node": "^20.11.0",
+        "chokidar-cli": "^3.0.0",
         "concurrently": "^8.2.2",
         "typescript": "^5.2.2",
         "vite": "^5.0.8",
+        "vite-plugin-full-reload": "^1.1.0",
         "vite-plugin-static-copy": "^1.0.0"
     }
 }
