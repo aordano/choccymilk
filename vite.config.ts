@@ -13,7 +13,6 @@ export default defineConfig({
     },
 });
 
-// Custom plugin to copy HTML files from the generated folder
 function copy() {
     return {
         name: "copy",
