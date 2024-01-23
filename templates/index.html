@@ -4,25 +4,34 @@
 		<meta charset="UTF-8"/>
 		<link rel="icon" type="image/svg+xml" href="/vite.svg"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Vite + Lit + TS</title>
+		<title>Choccymilk</title>
 		<link rel="stylesheet" href="/src/index.css"/>
-		<script type="module" src="/src/my-element.ts"></script>
+		<script type="module" src="/src/general.ts"></script>
 	</head>
 	<body>
+		{# TODO add nav
+						TODO add hero
+						TODO add separator #}
 		{%- block content %}
-
-		<div class="posts">
-			{% for page in section.pages | reverse %}
-				<div class="post">
-					<h1 class="post-title">
+		<div class="container mx-auto">
+			<div class="posts">
+				{% for page in section.pages | reverse %}
+					<div class="card card-compact w-96 bg-base-100 shadow-xl">
 						<a href="{{ page.permalink }}">
-							{{ page.title | safe }}
-						</a>
-					</h1>
+							<figure><img src="{{page.extra.cover}}" alt="{{page.title}}"/></figure>
+							<div class="card-body">
+								<h2 class="card-title">{{page.title}}</h2>
+								<p>{{page.extra.stub}}</p>
+								<div class="card-actions justify-start">
 
-					<span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-				</div>
-			{% endfor %}
+									<span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	{%- endblock content %}
+	{# TODO add footer #}
 </body></html>

@@ -1,8 +1,11 @@
-+++
-title = "potatosio"
-slug = "potato rocks"
-date = "2024-01-13"
-+++
+---
+title: "potatosio"
+slug: "potato rocks"
+date: "2024-01-13"
+extra:
+    stub: "incredible post description"
+    cover: "/vite.svg"
+---
 
 # hi
 
