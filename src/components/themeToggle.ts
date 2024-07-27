@@ -66,8 +66,8 @@ class ThemeToggle extends BaseElement {
             <div class="btn btn-ghost btn-sm" @click="${this.toggleTheme}">
                 <i
                     class="icon ${this.isDarkTheme
-                        ? "fa fa-moon icon-dark icon-enter"
-                        : "fa fa-sun icon-light icon-exit"}"
+                        ? "fa fa-sun icon-dark icon-enter"
+                        : "fa fa-moon icon-light icon-exit"}"
                 ></i>
             </div>
         `;
