@@ -12,12 +12,14 @@
         "lit": "^3.1.0"
     },
     "devDependencies": {
+        "@tailwindcss/typography": "^0.5.13",
         "@types/node": "^20.11.0",
         "autoprefixer": "^10.4.17",
         "chokidar-cli": "^3.0.0",
         "concurrently": "^8.2.2",
         "daisyui": "^4.6.0",
         "postcss": "^8.4.33",
+        "@fortawesome/fontawesome-free": "^6.6.0",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.2.2",
         "vite": "^5.0.8",
