@@ -4,7 +4,7 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "zola build && concurrently \"chokidar 'content/*' 'static/*' 'templates/*' -c 'zola build'\" \"chokidar 'vite/*' -c 'vite build -m development'\" \"vite\"",
+        "dev": "zola build && concurrently \"chokidar 'data/**/*' 'content/**/*' 'static/**/*' 'templates/**/*' -c 'zola build'\" \"chokidar 'vite/**/*' -c 'vite build -m development'\" \"vite\"",
         "build": "zola build && tsc && vite build",
         "preview": "vite preview"
     },
