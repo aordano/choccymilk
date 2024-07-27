@@ -4,7 +4,14 @@
 	{% for card in cards %}
 		<choccy-card title="{{card.name}}" image="{{card.image}}">
 			<p>{{card.description}}</p>
-			<button slot="actions" class="btn btn-primary">{{card.button}}</button>
+			<a href="{{card.target}}" slot="actions" class="btn btn-primary btn-sm">
+				{{card.button}}
+				{% if card.target is containing("https://") %}
+					<i class="fa-solid fa-arrow-up-right-from-square"></i>
+				{% else %}
+					<i class="fa-solid fa-arrow-right"></i>
+				{% endif %}
+			</a>
 		</choccy-card>
 	{% endfor %}
 </div>

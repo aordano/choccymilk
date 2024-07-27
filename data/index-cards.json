@@ -3,36 +3,42 @@
         "name": "Blog",
         "description": "Check out my musings.",
         "image": "stock/blog-stock-photo.jpg",
-        "button": "Read"
+        "button": "Bask in them",
+        "target": "/blog"
     },
     {
         "name": "Github",
         "description": "The place where code lives.",
         "image": "stock/github-stock-photo.jpg",
-        "button": "Visit"
+        "button": "Go to Microsoft",
+        "target": "https://github.com/aordano"
     },
     {
         "name": "Showcase",
         "description": "Cool things I think are worth checking.",
         "image": "stock/showcase-stock-photo.jpg",
-        "button": "Be Amazed"
+        "button": "Be Amazed",
+        "target": "/showcase"
     },
     {
         "name": "About Me",
         "description": "Like it says on the tin.",
         "image": "stock/about-stock-photo.jpeg",
-        "button": "Know Me better"
+        "button": "Know Me better",
+        "target": "/about"
     },
     {
         "name": "Resumé",
         "description": "Take a gander.",
         "image": "stock/resume-stock-photo.png",
-        "button": "Hire Me"
+        "button": "Hire Me",
+        "target": "/resume"
     },
     {
         "name": "Things I've done",
         "description": "A simple list of things I have done. Not Exhaustive. Not in any particular order.",
         "image": "stock/things-stock-photo.jpeg",
-        "button": "Visit"
+        "button": "Consume",
+        "target": "/logs"
     }
 ]
