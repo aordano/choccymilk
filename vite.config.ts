@@ -6,49 +6,30 @@ import FullReload from "vite-plugin-full-reload";
 export default defineConfig({
     root: "vite",
     publicDir: path.resolve(__dirname, "static"),
-    plugins: [copy(), FullReload(["vite/**/*.html"])],
+    plugins: [symlink(), FullReload(["vite/**/*.html"])],
     build: {
         outDir: "../dist",
         emptyOutDir: true,
     },
+    server: {
+        watch: {
+            usePolling: true,
+            interval: 50,
+        },
+    },
 });
 
-function copy() {
+function symlink() {
     return {
-        name: "copy",
+        name: "symlink",
         buildStart() {
             const viteSrc = path.resolve(__dirname, "vite/src");
             const src = path.resolve(__dirname, "src");
-            copyRecursiveSync(src, viteSrc);
+            try {
+                fs.symlinkSync(src, viteSrc, "junction");
+            } catch (err) {
+                console.error(`Error creating symlink: ${err.message}`);
+            }
         },
     };
-}
-
-function copyRecursiveSync(src, dest) {
-    const exists = fs.existsSync(src);
-    const stats = exists && fs.statSync(src);
-    const isDirectory = exists && stats && stats.isDirectory();
-    if (isDirectory) {
-        fs.mkdirSync(dest, { recursive: true });
-        fs.readdirSync(src).forEach(function (childItemName) {
-            copyRecursiveSync(
-                path.join(src, childItemName),
-                path.join(dest, childItemName)
-            );
-        });
-    } else {
-        let shouldCopy = true;
-        if (fs.existsSync(dest)) {
-            const destStats = fs.statSync(dest);
-            if (stats && destStats) {
-                shouldCopy = stats.mtime > destStats.mtime;
-
-                if (shouldCopy) {
-                    fs.copyFileSync(src, dest);
-                }
-            }
-        } else if (stats) {
-            fs.copyFileSync(src, dest);
-        }
-    }
 }
