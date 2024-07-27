@@ -1,4 +1,4 @@
-import { html, css } from "lit";
+import { html, css, PropertyValues } from "lit";
 import { property, state, customElement } from "lit/decorators.js";
 import { BaseElement } from "./base";
 
@@ -8,6 +8,7 @@ class ThemeToggle extends BaseElement {
     @property({ type: String }) dark = "dark";
 
     @state() private isDarkTheme = false;
+    @state() private storedTheme: string | null = "";
 
     static styles = [
         css`
@@ -36,10 +37,16 @@ class ThemeToggle extends BaseElement {
 
     constructor() {
         super();
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme) {
-            this.isDarkTheme = storedTheme === this.dark;
-            document.documentElement.setAttribute("data-theme", storedTheme);
+        this.storedTheme = localStorage.getItem("theme");
+    }
+
+    protected firstUpdated(_changedProperties: PropertyValues): void {
+        if (this.storedTheme) {
+            this.isDarkTheme = this.storedTheme === this.dark;
+            document.documentElement.setAttribute(
+                "data-theme",
+                this.storedTheme
+            );
         } else {
             this.isDarkTheme =
                 document.documentElement.getAttribute("data-theme") ===
@@ -59,8 +66,8 @@ class ThemeToggle extends BaseElement {
             <div class="btn btn-ghost btn-sm" @click="${this.toggleTheme}">
                 <i
                     class="icon ${this.isDarkTheme
-                        ? "fa fa-moon icon-light icon-enter"
-                        : "fa fa-sun icon-dark icon-exit"}"
+                        ? "fa fa-moon icon-dark icon-enter"
+                        : "fa fa-sun icon-light icon-exit"}"
                 ></i>
             </div>
         `;
