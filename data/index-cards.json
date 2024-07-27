@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Blog",
+        "description": "Check out my musings.",
+        "image": "stock/blog-stock-photo.jpg",
+        "button": "Read"
+    },
+    {
+        "name": "Github",
+        "description": "The place where code lives.",
+        "image": "stock/github-stock-photo.jpg",
+        "button": "Visit"
+    },
+    {
+        "name": "Showcase",
+        "description": "Cool things I think are worth checking.",
+        "image": "stock/showcase-stock-photo.jpg",
+        "button": "Be Amazed"
+    },
+    {
+        "name": "About Me",
+        "description": "Like it says on the tin.",
+        "image": "stock/about-stock-photo.jpeg",
+        "button": "Know Me better"
+    },
+    {
+        "name": "Resumé",
+        "description": "Take a gander.",
+        "image": "stock/resume-stock-photo.png",
+        "button": "Hire Me"
+    },
+    {
+        "name": "Things I've done",
+        "description": "A simple list of things I have done. Not Exhaustive. Not in any particular order.",
+        "image": "stock/things-stock-photo.jpeg",
+        "button": "Visit"
+    }
+]

@@ -3,35 +3,18 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<link rel="icon" type="image/svg+xml" href="/vite.svg"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Choccymilk</title>
 		<link rel="stylesheet" href="/src/index.css"/>
-		<script type="module" src="/src/general.ts"></script>
+		<script type="module" src="/src/site.ts"></script>
 	</head>
 	<body>
-		{# TODO add nav
-						TODO add hero
-						TODO add separator #}
+		{% include 'partials/nav.html' %}
 		{%- block content %}
-		<div class="container mx-auto">
-			<div class="posts">
-				{% for page in section.pages | reverse %}
-					<div class="card card-compact w-96 bg-base-100 shadow-xl">
-						<a href="{{ page.permalink }}">
-							<figure><img src="{{page.extra.cover}}" alt="{{page.title}}"/></figure>
-							<div class="card-body">
-								<h2 class="card-title">{{page.title}}</h2>
-								<p>{{page.extra.stub}}</p>
-								<div class="card-actions justify-start">
-
-									<span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-								</div>
-							</div>
-						</a>
-					</div>
-				{% endfor %}
-			</div>
+		{% include 'partials/hero.html' %}
+		<div class="container mx-auto p-2">
+			{% include 'includes/index-cards.html' %}
 		</div>
 	{%- endblock content %}
-	{# TODO add footer #}
+	{% include 'partials/footer.html' %}
 </body></html>

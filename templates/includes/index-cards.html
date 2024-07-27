@@ -1,0 +1,10 @@
+{% set cards = load_data(path="data/index-cards.json") %}
+
+<div class="grid gap-10 grid-cols-1 auto-rows-max justify-items-center sm:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-4 ">
+	{% for card in cards %}
+		<choccy-card title="{{card.name}}" image="{{card.image}}">
+			<p>{{card.description}}</p>
+			<button slot="actions" class="btn btn-primary">{{card.button}}</button>
+		</choccy-card>
+	{% endfor %}
+</div>
