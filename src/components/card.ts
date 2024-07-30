@@ -9,7 +9,9 @@ export class Card extends BaseElement {
 
     render() {
         return html`
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div
+                class="card hover w-96 bg-neutral text-neutral-content shadow-sm"
+            >
                 ${this.image
                     ? html`<figure class="h-80">
                           <img src="${this.image}" alt="${this.title}" />
