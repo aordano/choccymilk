@@ -1,25 +1,16 @@
+{% set links = load_data(path="data/nav-elements.json") %}
+
 <div class="navbar bg-base-100">
 	<div class="flex-1">
 		<a class="btn btn-ghost ps-[1px] text-xl"><img class="h-11 rounded-md" src="/logo/wide.png">Choccymilk</a>
 	</div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal align-middle px-1">
-			<li>
-				<a>Link</a>
-			</li>
-			<li>
-				<details>
-					<summary>Parent</summary>
-					<ul class="bg-base-100 rounded-t-none p-2">
-						<li>
-							<a>Link 1</a>
-						</li>
-						<li>
-							<a>Link 2</a>
-						</li>
-					</ul>
-				</details>
-			</li>
+			{% for entry in links %}
+				<li>
+					<a href="{{entry.link}}">{{entry.name}}</a>
+				</li>
+			{% endfor %}
 			<choccy-themetoggle light="retro" dark="dracula"></choccy-themetoggle>
 		</ul>
 	</div>
