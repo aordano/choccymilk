@@ -22,6 +22,10 @@
 					<span class="mx-1">&#183;</span>
 				{% endif %}
 				<time class="text-xs opacity-50">{{entry.date}}</time>
+				<span class="mx-1">&#183;</span>
+				<choccy-copy-text class="text-xs opacity-50" target="{{ config.extra.base_url }}/logs/index.html#{{entry_id}}">
+					Permalink
+				</choccy-copy-text>
 			</div>
 			{% for paragraph in entry.description %}
 				<div class="chat-bubble mt-2">
@@ -42,10 +46,5 @@
 				</div>
 			</div>
 		{% endif %}
-		<div class="chat-footer ms-4 mb-2 opacity-50">
-			<choccy-copy-text target="{{ config.extra.base_url }}/logs/index.html#{{entry_id}}">
-				Permalink
-			</choccy-copy-text>
-		</div>
 	</div>
 {% endfor %}

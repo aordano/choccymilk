@@ -28,5 +28,13 @@
         "link": "/logs/index.html",
         "linkText": "Spin in place",
         "topics": ["choccymilk", "frontend", "code"]
+    },
+    {
+        "title": "Added Topic icons",
+        "date": "2024-08-03",
+        "description": [
+            "Added topic icons on the chat bubbles on this page so each entry is easier to identify. Also moved the permalink button to the same line so it's not confusing."
+        ],
+        "topics": ["choccymilk", "frontend", "code"]
     }
 ]
