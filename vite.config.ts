@@ -48,7 +48,7 @@ function symlink() {
 
 function symlinkHTML() {
     return {
-        name: "symlinkHTML",
+        name: "symlink",
         buildStart() {
             const viteRoot = path.resolve(__dirname, "vite");
             const staticDir = path.resolve(__dirname, "static");

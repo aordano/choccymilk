@@ -9,6 +9,7 @@ export default {
         fontFamily: {
             sans: ["DIN Next LT Pro", "sans-serif"],
             serif: ["Minion Pro", "serif"],
+            mono: ["Fira Code", "monospaced"],
         },
     },
     plugins: [typographyPlugin, daisyui],

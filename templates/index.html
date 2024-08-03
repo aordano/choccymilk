@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Choccymilk</title>
-        <link rel="stylesheet" href="/src/index.css" />
-        <script type="module" src="/src/site.ts"></script>
-        {%- block head %} 
-		{%- endblock head %}
-    </head>
-    <body>
-        {% include 'partials/nav.html' %} 
-		{%- block content %} 
-			{% include 'partials/hero.html' %}
-			<div class="container mx-auto p-2 my-10">
-				{% include 'includes/index-cards.html' %}
-			</div>
-        {%- endblock content %} 
-		{% include 'partials/footer.html' %}
-    </body>
-        {%- block scripts %} 
-		{%- endblock scripts %}
-</html>
+	<head>
+		<meta charset="UTF-8"/>
+		<link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Choccymilk</title>
+		<link rel="stylesheet" href="/src/index.css"/>
+		<script type="module" src="/src/site.ts"></script>
+		{%- block head %}
+	{%- endblock head %}
+</head>
+<body>
+	{% include 'partials/nav.html' %}
+	{%- block content %}
+	{% include 'includes/hero-index.html' %}
+	<div class="container mx-auto p-2 my-10" id="main-content">
+		{% include 'includes/index-cards.html' %}
+	</div>
+{%- endblock content %}
+{% include 'partials/footer.html' %}</body>{%- block scripts %}{%- endblock scripts %}</html>

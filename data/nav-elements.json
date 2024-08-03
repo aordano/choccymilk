@@ -1,18 +1,18 @@
 [
     {
         "name": "Blog",
-        "link": "/blog"
+        "link": "/blog/index.html"
     },
     {
         "name": "About Me",
-        "link": "/about"
+        "link": "/about/index.html"
     },
     {
         "name": "Showcase",
-        "link": "/showcase"
+        "link": "/showcase/index.html"
     },
     {
         "name": "Things I've done",
-        "link": "/logs"
+        "link": "/logs/index.html"
     }
 ]
