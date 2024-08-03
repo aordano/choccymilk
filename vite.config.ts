@@ -16,7 +16,7 @@ export default defineConfig({
         emptyOutDir: true,
         rollupOptions: {
             input: {
-                site: resolve(__dirname, "vite/index.html"),
+                index: resolve(__dirname, "vite/index.html"),
                 logs: resolve(__dirname, "vite/logs/index.html"),
             },
         },

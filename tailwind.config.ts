@@ -13,8 +13,7 @@ export default {
     },
     plugins: [typographyPlugin, daisyui],
     daisyui: {
-        themes: ["dracula", "nord"],
+        themes: ["dracula", "cupcake"],
         darkTheme: "dracula",
-        themeRoot: "*",
     },
 } satisfies Config;
