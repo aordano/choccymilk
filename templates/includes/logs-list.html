@@ -1,0 +1,38 @@
+{% set entries = load_data(path="data/logs.json") %}
+{% set sorted = entries | sort(attribute="date") | reverse %}
+
+{% for entry in sorted %}
+	{% set entry_id =  [entry.date, entry.title] | join(sep="-") | striptags | base64_encode | trim_end_matches(pat="=") | truncate(length=35, end="")%}
+
+	<div class="mb-4" id="{{ entry_id }}">
+		<div class="chat chat-start">
+			<div class="chat-header">
+				{{entry.title}}
+				<span class="mx-1">&#183;</span>
+				<time class="text-xs opacity-50">{{entry.date}}</time>
+			</div>
+			{% for paragraph in entry.description %}
+				<div class="chat-bubble mt-2">
+					<p class="my-2 mx-2 prose prose-slate font-normal">{{paragraph | safe}}</p>
+				</div>
+			{% endfor %}
+		</div>
+		{% if entry.link %}
+			<div class="chat chat-start">
+				<div class="chat-bubble">
+					<a href="{{entry.link}}" class="btn btn-sm btn-secondary font-normal">{{entry.linkText | safe}}
+						{% if entry.link is containing("https://") %}
+							<i class="fa-solid fa-arrow-up-right-from-square"></i>
+						{% else %}
+							<i class="fa-solid fa-arrow-right"></i>
+						{% endif %}
+					</a>
+				</div>
+			</div>
+		{% endif %}
+		<div class="chat-footer ms-4 mb-2 opacity-50">
+			<choccy-copy-text target="{{ config.extra.base_url }}/logs/index.html#{{entry_id}}">
+				Permalink
+			</choccy-copy-text>
+		</div>
+	{% endfor %}

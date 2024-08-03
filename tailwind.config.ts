@@ -3,7 +3,7 @@ import daisyui from "daisyui";
 import typographyPlugin from "@tailwindcss/typography";
 
 export default {
-    content: ["./vite/index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    content: ["./vite/**/*.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {},
         fontFamily: {
@@ -13,7 +13,8 @@ export default {
     },
     plugins: [typographyPlugin, daisyui],
     daisyui: {
-        themes: ["dracula", "retro", "cupcake"],
+        themes: ["dracula", "nord"],
         darkTheme: "dracula",
+        themeRoot: "*",
     },
 } satisfies Config;

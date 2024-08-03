@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block head %}
+	<script type="module" src="/src/logs.ts"></script>
+{% endblock head %}
+{% block content %}
+	{% include 'partials/hero.html' %}
+	<div class="container mx-auto p-2 my-10">
+		{% include 'includes/logs-list.html' %}
+	</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Added chat bubbles to my website",
+        "date": "2024-08-02",
+        "description": [
+            "Added chat bubbles to this log list you're reading rn, so it looks more conversational and less formal.",
+            "Had a weird issue with vite targets but was quickly solved.<br>I guess weird issues with vite are to be expected when one has a weird setup like this one."
+        ]
+    },
+    {
+        "title": "Created work document locator service PoC at work",
+        "date": "2024-08-02",
+        "description": [
+            "The document locator service at work grabs resource paths and resolves a media link for a cloud storage file. This service, inside the monolith, was executed serverside and has horrible performance, and has a lot of problems.",
+            "As usual, <code>Rewriting It In Rust</code>™️ was a great idea, so i added a PoC that i will extend depending on how much \"free\" time i have at work.",
+            "For now it correctly resolves the resource, gets the metadata and grabs the media link. The hard parts are ahead; caching, connecting with a metadata source of truth (redis), processing, resizing, etc etc."
+        ]
+    },
+    {
+        "title": "Added this page to my website",
+        "date": "2024-07-30",
+        "description": [
+            "Added this \"logs\" / \"things i have done\" page. This is like some microblogging thing but i just recount things i have done so i have a registry of stuff i do.",
+            "I usually end up forgetting the small wins, so i think this is a good idea. I will add a link to the page just to remember the button functionality exists:"
+        ],
+        "link": "/logs/index.html",
+        "linkText": "Spin in place"
+    }
+]

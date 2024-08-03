@@ -1,15 +1,25 @@
 import { defineConfig } from "vite";
 import fs from "fs";
-import path from "path";
+import path, { resolve } from "path";
 import FullReload from "vite-plugin-full-reload";
 
 export default defineConfig({
     root: "vite",
     publicDir: path.resolve(__dirname, "static"),
-    plugins: [symlink(), symlinkHTML(), FullReload(["vite/**/*.html"])],
+    plugins: [
+        symlink(),
+        symlinkHTML(),
+        FullReload(["vite/**/*.html", "src/**/*.ts", "templates/**/*.html"]),
+    ],
     build: {
         outDir: "../dist",
         emptyOutDir: true,
+        rollupOptions: {
+            input: {
+                site: resolve(__dirname, "vite/index.html"),
+                logs: resolve(__dirname, "vite/logs/index.html"),
+            },
+        },
     },
     server: {
         watch: {
@@ -38,7 +48,7 @@ function symlink() {
 
 function symlinkHTML() {
     return {
-        name: "symlink",
+        name: "symlinkHTML",
         buildStart() {
             const viteRoot = path.resolve(__dirname, "vite");
             const staticDir = path.resolve(__dirname, "static");
