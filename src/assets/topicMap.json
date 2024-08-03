@@ -1,0 +1,58 @@
+{
+    "rust": {
+        "icon": {
+            "set": "brands",
+            "icon": "rust"
+        },
+        "text": "Rust Programming Language"
+    },
+    "work": {
+        "icon": {
+            "set": "solid",
+            "icon": "briefcase"
+        },
+        "text": "Work-Related Topic"
+    },
+    "frontend": {
+        "icon": {
+            "set": "brands",
+            "icon": "square-js"
+        },
+        "text": "Frontend Web Development"
+    },
+    "backend": {
+        "icon": {
+            "set": "solid",
+            "icon": "server"
+        },
+        "text": "Backend Web Development"
+    },
+    "database": {
+        "icon": {
+            "set": "solid",
+            "icon": "database"
+        },
+        "text": "Database-Related Topic"
+    },
+    "cloud": {
+        "icon": {
+            "set": "solid",
+            "icon": "cloud"
+        },
+        "text": "Cloud Technologies and Infrastructure"
+    },
+    "choccymilk": {
+        "icon": {
+            "set": "solid",
+            "icon": "cookie-bite"
+        },
+        "text": "Topic about this website"
+    },
+    "code": {
+        "icon": {
+            "set": "solid",
+            "icon": "code-branch"
+        },
+        "text": "Programming-Related Topic"
+    }
+}

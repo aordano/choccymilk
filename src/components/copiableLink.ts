@@ -5,10 +5,10 @@ import copy from "copy-to-clipboard";
 
 @customElement("choccy-copy-text")
 export class CopiableText extends BaseElement {
-    @property({ type: String }) icon = "fa-copy";
-    @property({ type: String }) target = "";
-    @property({ type: String }) toast = "Copied";
-    @property({ type: String }) timeout = 2000;
+    @property() icon: string = "fa-copy";
+    @property() target: string = "";
+    @property() toast: string = "Copied";
+    @property() timeout: number = 2000;
 
     @state() private showToast = false;
 

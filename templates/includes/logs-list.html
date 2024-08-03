@@ -8,12 +8,24 @@
 		<div class="chat chat-start">
 			<div class="chat-header">
 				{{entry.title}}
-				<span class="mx-1">&#183;</span>
+				{% if entry.topics %}
+					<span class="mx-1">&#183;</span>
+					{% for topic in entry.topics %}
+						<choccy-topic-entry topic="{{topic}}" class="text-xs opacity-75"></choccy-topic-entry>
+						{% if loop.last %}
+							<span class="mx-1">&#183;</span>
+						{% else %}
+							<span class="mx-1"></span>
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					<span class="mx-1">&#183;</span>
+				{% endif %}
 				<time class="text-xs opacity-50">{{entry.date}}</time>
 			</div>
 			{% for paragraph in entry.description %}
 				<div class="chat-bubble mt-2">
-					<p class="my-2 mx-2 prose prose-slate font-normal">{{paragraph | safe | markdown(inline=true)}}</p>
+					<p class="my-2 mx-2 prose prose-slate font-normal text-neutral-content">{{paragraph | markdown(inline=true) | safe }}</p>
 				</div>
 			{% endfor %}
 		</div>
@@ -35,4 +47,5 @@
 				Permalink
 			</choccy-copy-text>
 		</div>
-	{% endfor %}
+	</div>
+{% endfor %}
