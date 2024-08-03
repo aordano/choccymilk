@@ -4,22 +4,23 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "zola build && concurrently \"chokidar 'data/**/*' 'content/**/*' 'static/**/*' 'templates/**/*' -c 'zola build'\" \"chokidar 'vite/**/*' -c 'vite build -m development'\" \"vite\"",
+        "dev": "zola build && concurrently \"chokidar 'data/**/*' 'content/**/*' 'static/**/*' 'templates/**/*' -c 'zola build'\" \"chokidar 'vite/**/*' -c 'vite build -m development'\" \"vite --host 0.0.0.0\"",
         "build": "zola build && tsc && vite build",
         "preview": "vite preview"
     },
     "dependencies": {
+        "copy-to-clipboard": "^3.3.3",
         "lit": "^3.1.0"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-free": "^6.6.0",
         "@tailwindcss/typography": "^0.5.13",
         "@types/node": "^20.11.0",
         "autoprefixer": "^10.4.17",
         "chokidar-cli": "^3.0.0",
         "concurrently": "^8.2.2",
-        "daisyui": "^4.6.0",
+        "daisyui": "^4.12.10",
         "postcss": "^8.4.33",
-        "@fortawesome/fontawesome-free": "^6.6.0",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.2.2",
         "vite": "^5.0.8",
