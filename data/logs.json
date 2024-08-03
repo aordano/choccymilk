@@ -20,7 +20,7 @@
         "title": "Added this page to my website",
         "date": "2024-07-30",
         "description": [
-            "Added this \"logs\" / \"things i have done\" page. This is like some microblogging thing but i just recount things i have done so i have a registry of stuff i do.",
+            "Added this _\"logs\"_ / _\"things i have done\"_ page. This is like some microblogging thing but i just recount things i have done so i have a registry of stuff i do.",
             "I usually end up forgetting the small wins, so i think this is a good idea. I will add a link to the page just to remember the button functionality exists:"
         ],
         "link": "/logs/index.html",

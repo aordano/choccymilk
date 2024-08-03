@@ -13,7 +13,7 @@
 			</div>
 			{% for paragraph in entry.description %}
 				<div class="chat-bubble mt-2">
-					<p class="my-2 mx-2 prose prose-slate font-normal">{{paragraph | safe}}</p>
+					<p class="my-2 mx-2 prose prose-slate font-normal">{{paragraph | safe | markdown(inline=true)}}</p>
 				</div>
 			{% endfor %}
 		</div>
