@@ -18,6 +18,8 @@ export default defineConfig({
             input: {
                 index: resolve(__dirname, "vite/index.html"),
                 logs: resolve(__dirname, "vite/logs/index.html"),
+                blog: resolve(__dirname, "vite/blog/index.html"),
+                showcase: resolve(__dirname, "vite/showcase/index.html"),
             },
         },
     },
