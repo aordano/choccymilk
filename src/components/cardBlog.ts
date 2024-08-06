@@ -34,7 +34,7 @@ export class BlogCard extends BaseElement {
 
         const buttonAlign = left ? "sm:pe-12 sm:ps-4" : "sm:ps-12 sm:pe-4";
 
-        const bodyPadding = left ? "ps" : "pe";
+        const bodyPadding = left ? "pe" : "ps";
 
         const figure = html`<figure
             class="sm:max-h-96 lg:max-w-80 lg:px-8 xl:max-w-[500px] xl:py-10"
@@ -51,7 +51,7 @@ export class BlogCard extends BaseElement {
                 class="card lg:card-side bg-${this.palette} text-${this
                     .palette}-content shadow-xl w-100"
             >
-                ${this.image && (left || this.mobile) ? figure : null}
+                ${this.image && (!left || this.mobile) ? figure : null}
                 <div class="card-body pt-0 lg:${bodyPadding}-0">
                     <div
                         class="my-4 me-0 pb-0 pt-4 card-actions justify-between"
@@ -86,7 +86,7 @@ export class BlogCard extends BaseElement {
                         </a>
                     </div>
                 </div>
-                ${this.image && !this.mobile && !left ? figure : null}
+                ${this.image && !this.mobile && left ? figure : null}
             </div>
         `;
     }
