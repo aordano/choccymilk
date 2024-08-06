@@ -36,5 +36,13 @@
             "Added topic icons on the chat bubbles on this page so each entry is easier to identify. Also moved the permalink button to the same line so it's not confusing."
         ],
         "topics": ["choccymilk", "frontend", "code"]
+    },
+    {
+        "title": "Added Blog List View",
+        "date": "2024-08-05",
+        "description": [
+            "Added the blog list view and implemented the 'tags' taxonomy. Also did some fixes on other parts of the website, and thought about some blogposts I wanna write."
+        ],
+        "topics": ["choccymilk", "frontend", "code"]
     }
 ]

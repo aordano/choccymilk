@@ -1,0 +1,6 @@
+-   Post about the ungodly zola+vite deployment for the website
+-   Post about implementing algos in SQL and creating a game that runs entirely within SQL and you only need to tick() and read state/ write inputs. Said post can have like a Snake game with a very naive implementation of A\* and you just play it there.
+-   Post about midiboard
+-   Post about Wiz weird variation of JSON-RPC
+-   Post about using Nix for CI/CD
+-   Post about creating a storage engine that uses pixels on a <canvas> as a storage backend and exposing a visual representation of actual low level state on the browser

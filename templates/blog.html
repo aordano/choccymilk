@@ -4,16 +4,18 @@
 {% endblock head %}
 {% block content %}
 	{% include 'includes/hero-blog.html' %}
-	<div class="container mx-auto p-2 my-10">
-		<div class="grid grid-cols-1">
+	<div class="container mx-auto p-2 py-10 my-10">
+		<div class="grid grid-cols-1 gap-y-10">
 			{% for page in section.pages %}
-				<choccy-blog-card date="{{page.date}}" tags="{{page.taxonomies.tags | join(sep=",")}}" title="{{page.title}}" {% if page.extra and page.extra.image %} image="{{page.extra.image}}" {% endif %}>
-					<p class="prose prose-slate">{{page.description}}</p>
-					<a href="{{page.path}}" slot="actions" class="btn btn-primary btn-sm">
-						Read
-						<i class="fa-solid fa-arrow-right"></i>
-					</a>
-				</choccy-blog-card>
+				{% if not loop.index % 2 %}
+					{% set palette = "secondary" %}
+					{% set side = "right" %}
+				{% else %}
+					{% set palette = "neutral" %}
+					{% set side = "left" %}
+				{% endif %}
+
+				<choccy-blog-card target="{{page.path}}" description="{{page.description}}" side="{{side}}" date="{{page.date}}" palette="{{palette}}" tags="{{page.taxonomies.tags | join(sep=",")}}" title="{{page.title}}" {% if page.extra and page.extra.image %} image="{{page.extra.image}}" {% endif %}></choccy-blog-card>
 			{% endfor %}
 		</div>
 	</div>
