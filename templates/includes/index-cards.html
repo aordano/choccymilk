@@ -3,8 +3,8 @@
 <div class="grid gap-10 grid-cols-1 auto-rows-max justify-items-center sm:grid-cols-2 xl:grid-cols-3 xxl:grid-cols-4 ">
 	{% for card in cards %}
 		<choccy-card title="{{card.name}}" image="{{card.image}}">
-			<p>{{card.description}}</p>
-			<a href="{{card.target}}" slot="actions" class="btn btn-primary btn-sm">
+			<p class="prose font-light my-4 mt-2">{{card.description}}</p>
+			<a href="{{card.target}}" slot="actions" class="mt-4 sm:mt-0 sm:mb-0 btn btn-primary sm:btn-sm mx-auto sm:mx-0 px-10">
 				{{card.button}}
 				{% if card.target is containing("https://") %}
 					<i class="fa-solid fa-arrow-up-right-from-square"></i>

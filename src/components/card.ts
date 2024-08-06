@@ -10,15 +10,15 @@ export class Card extends BaseElement {
     render() {
         return html`
             <div
-                class="card hover w-96 bg-neutral text-neutral-content shadow-sm"
+                class="card hover max-w-96 bg-neutral text-neutral-content shadow-sm"
             >
                 ${this.image
-                    ? html`<figure class="h-80">
+                    ? html`<figure class="w-100 max-h-64">
                           <img src="${this.image}" alt="${this.title}" />
                       </figure>`
                     : null}
                 <div class="card-body">
-                    <h2 class="card-title">${this.title}</h2>
+                    <h2 class="card-title font-normal">${this.title}</h2>
                     <slot></slot>
                     <div class="card-actions justify-end">
                         <slot name="actions"></slot>
